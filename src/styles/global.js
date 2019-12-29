@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components"
+import vars from "./vars"
 
 const GlobalStyle = createGlobalStyle`
+  ${vars}
   *,
   *:before,
   *:after {
