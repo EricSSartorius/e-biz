@@ -1,31 +1,72 @@
 import { Link } from "gatsby"
 import styled from "styled-components"
-import PropTypes from "prop-types"
 import React from "react"
 import Nav from "./Nav"
 
-const Header = ({ siteTitle }) => (
+type Props = {
+  siteTitle: string
+}
+
+const links = [
+  {
+    link: "/",
+    title: "Home",
+  },
+  {
+    link: "/store",
+    title: "Store",
+  },
+  {
+    link: "/about",
+    title: "About",
+  },
+  {
+    link: "/contact",
+    title: "Contact",
+  },
+]
+
+const Header = ({ siteTitle }: Props) => (
   <HeaderWrapper>
-    <div>
-      <h1>
+    <InnerHeader>
+      <h1 className="logo">
         <Link to="/">{siteTitle}</Link>
       </h1>
-    </div>
-    <Nav />
+      <Nav links={links} />
+    </InnerHeader>
   </HeaderWrapper>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
 
 const HeaderWrapper = styled.header`
+  top: 0;
   width: 100%;
-  background: var(--blue-600);
+  height: 73px;
+  background: var(--light-grey);
+  z-index: var(--headerLevel);
+  position: sticky;
+`
+
+const InnerHeader = styled.div`
+  padding: 0 2%;
+  color: white;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  height: 100%;
+  .logo {
+    margin: 0;
+    flex-shrink: 1;
+    a {
+      color: white;
+      display: flex;
+      align-items: center;
+      background: none;
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
 `

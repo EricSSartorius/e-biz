@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `E-Biz`,
+    title: `2 Guys and a Comp`,
     description: `Buy things and be happy.`,
+    facebook: "",
+    twitter: "The_Epic_Life",
     author: `@The_Epic_Life`,
   },
   plugins: [

@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import GlobalStyle from "../styles/global"
 import Header from "../components/Header"
@@ -11,6 +10,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          facebook
+          twitter
         }
       }
     }
@@ -21,13 +22,13 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <Footer />
+      <Footer
+        siteTitle={data.site.siteMetadata.title}
+        facebook={data.site.siteMetadata.facebook}
+        twitter={data.site.siteMetadata.twitter}
+      />
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

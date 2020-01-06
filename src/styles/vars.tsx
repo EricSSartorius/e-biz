@@ -17,7 +17,7 @@ const vars = css`
     --textColor: var(--dark-grey);
     --primaryColor: var(--orange-500);
     --containerColor: var(--light-grey);
-    --bgColor: var(--white);
+    --bgColor: var(--light-grey);
     --lineColor: var(--lightest-grey);
 
     --cardRadius: 15px;

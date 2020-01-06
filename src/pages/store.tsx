@@ -1,11 +1,11 @@
 import React from "react"
+import SEO from "../components/Seo"
 
-const store = () => {
-  return (
-    <div>
-      <h1>Store Page</h1>
-    </div>
-  )
-}
+const StorePage = () => (
+  <>
+    <SEO title="Store" />
+    <h1>Store Page</h1>
+  </>
+)
 
-export default store
+export default StorePage
