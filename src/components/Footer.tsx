@@ -36,7 +36,7 @@ const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
   <FooterLayout>
     <h2>
       <Link to="/" aria-label="home page">
-        LOGO HERE
+        {siteTitle}
       </Link>
     </h2>
     <Nav links={links} />
@@ -63,16 +63,12 @@ const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
 
 const FooterLayout = styled.footer`
   background: var(--light-grey);
-  color: var(--white);
   text-align: center;
   .sub-nav {
     display: flex;
     justify-content: center;
     li {
       margin: 0 10px;
-      a {
-        color: var(--white);
-      }
     }
   }
 `

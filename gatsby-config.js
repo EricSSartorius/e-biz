@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `2 Guys and a Comp`,
     description: `Buy things and be happy.`,
-    facebook: "",
+    facebook: "EpicGains",
     twitter: "The_Epic_Life",
     author: `@The_Epic_Life`,
   },

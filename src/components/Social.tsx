@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 type Props = {
   siteTitle: string
@@ -8,7 +9,7 @@ type Props = {
 
 const Social = ({ siteTitle, facebook = "", twitter = "" }: Props) => {
   return (
-    <ul>
+    <SocialUl>
       {facebook && (
         <li>
           <a
@@ -16,7 +17,7 @@ const Social = ({ siteTitle, facebook = "", twitter = "" }: Props) => {
             aria-label={`link to ${siteTitle} facebook account`}
           >
             {/* <Icon name="facebook" /> */}
-            FACBOOK
+            FB
           </a>
         </li>
       )}
@@ -27,12 +28,19 @@ const Social = ({ siteTitle, facebook = "", twitter = "" }: Props) => {
             aria-label={`link to ${siteTitle} twitter account`}
           >
             {/* <Icon name="twitter" /> */}
-            TWITTER
+            TWTR
           </a>
         </li>
       )}
-    </ul>
+    </SocialUl>
   )
 }
 
 export default Social
+
+const SocialUl = styled.ul`
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+`
