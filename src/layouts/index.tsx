@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {" "}
       <ShopifyProvider>
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
