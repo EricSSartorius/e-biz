@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import GlobalStyle from "../styles/global"
+import ShopifyProvider from "../context/ShopifyProvider"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Banner from "../components/Banner"
@@ -22,15 +23,18 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Banner />
-      <Main>{children}</Main>
-      <Footer
-        siteTitle={data.site.siteMetadata.title}
-        facebook={data.site.siteMetadata.facebook}
-        twitter={data.site.siteMetadata.twitter}
-      />
+      {" "}
+      <ShopifyProvider>
+        <GlobalStyle />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Banner />
+        <Main>{children}</Main>
+        <Footer
+          siteTitle={data.site.siteMetadata.title}
+          facebook={data.site.siteMetadata.facebook}
+          twitter={data.site.siteMetadata.twitter}
+        />
+      </ShopifyProvider>
     </>
   )
 }

@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import React from "react"
 import Nav from "./Nav"
+import CartIcon from "./CartIcon"
 import { sizes } from "../styles/breakpoints"
 
 type Props = {
@@ -34,7 +35,10 @@ const Header = ({ siteTitle }: Props) => (
         <h1 className="logo">
           <Link to="/">{siteTitle}</Link>
         </h1>
-        <Nav links={links} />
+        <div className="nav-wrapper">
+          <Nav links={links} />
+          <CartIcon />
+        </div>
       </InnerHeader>
     </HeaderWrapper>
   </>
@@ -73,5 +77,9 @@ const InnerHeader = styled.div`
         margin-right: 10px;
       }
     }
+  }
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
   }
 `
