@@ -14,8 +14,8 @@ const CartWrapper = styled("div")`
   overflow-y: scroll;
   right: 0;
   top: 0;
-  transform: ${({ open }: { open: boolean }) =>
-    open ? "translateX(0)" : "translateX(100%)"};
+  transform: ${({ isCartOpen }: { isCartOpen: boolean }) =>
+    isCartOpen ? "translateX(0)" : "translateX(100%)"};
   transition: transform 0.15s ease-in-out;
   width: 37rem;
   z-index: 1000;
@@ -89,7 +89,7 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
   }
 
   return (
-    <CartWrapper ref={cartRef} open={isCartOpen}>
+    <CartWrapper ref={cartRef} isCartOpen={isCartOpen}>
       <div data-testid="cart">
         <div>
           <h4 data-testid="cart-title">Your Cart</h4>
@@ -97,7 +97,7 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
         </div>
         <div>
           {isCartEmpty && <p data-testid="empty-cart">Your cart is empty.</p>}
-          {lineItems.map(
+          {checkout.lineItems.map(
             lineItem =>
               lineItem && <LineItem key={lineItem.id} lineItem={lineItem} />
           )}

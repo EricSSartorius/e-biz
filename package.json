@@ -6,6 +6,7 @@
   "author": "Eric Sartorius <ericssartorius@gmail.com>",
   "dependencies": {
     "@types/styled-components": "^4.4.1",
+    "date-fns": "^2.9.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-layout": "^1.1.18",
