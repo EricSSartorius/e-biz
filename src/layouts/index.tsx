@@ -1,8 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import GlobalStyle from "../styles/global"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Banner from "../components/Banner"
+import { sizes } from "../styles/breakpoints"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,7 +24,8 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <Banner />
+      <Main>{children}</Main>
       <Footer
         siteTitle={data.site.siteMetadata.title}
         facebook={data.site.siteMetadata.facebook}
@@ -32,3 +36,8 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
+
+const Main = styled.main`
+  max-width: ${sizes.xLarge / 18}em;
+  margin: auto;
+`

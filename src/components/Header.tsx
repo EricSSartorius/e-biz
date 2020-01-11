@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import React from "react"
 import Nav from "./Nav"
+import { sizes } from "../styles/breakpoints"
 
 type Props = {
   siteTitle: string
@@ -27,14 +28,16 @@ const links = [
 ]
 
 const Header = ({ siteTitle }: Props) => (
-  <HeaderWrapper>
-    <InnerHeader>
-      <h1 className="logo">
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-      <Nav links={links} />
-    </InnerHeader>
-  </HeaderWrapper>
+  <>
+    <HeaderWrapper>
+      <InnerHeader>
+        <h1 className="logo">
+          <Link to="/">{siteTitle}</Link>
+        </h1>
+        <Nav links={links} />
+      </InnerHeader>
+    </HeaderWrapper>
+  </>
 )
 
 export default Header
@@ -49,11 +52,13 @@ const HeaderWrapper = styled.header`
 `
 
 const InnerHeader = styled.div`
-  padding: 0 2%;
   color: white;
   position: relative;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
+  max-width: ${sizes.xLarge / 18}em;
+  margin: auto;
   display: flex;
   height: 100%;
   .logo {

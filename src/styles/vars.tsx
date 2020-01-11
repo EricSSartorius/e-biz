@@ -29,12 +29,12 @@ const vars = css`
     --smallFontSize: 0.8rem;
     --smallestFontSize: 0.512rem;
 
-    --h-1: 1.953rem;
-    --h-2: 1.563rem;
-    --h-3: 1.25rem;
-    --h-4: var(--baseFontSize);
-    --h-5: var(--smallFontSize);
-    --h-6: var(--baseNavSize);
+    --heading-1: 1.953rem;
+    --heading-2: 1.563rem;
+    --heading-3: 1.25rem;
+    --heading-4: var(--baseFontSize);
+    --heading-5: var(--smallFontSize);
+    --heading-6: var(--baseNavSize);
 
     /* Z-Index */
     --headerLevel: 10;
