@@ -3,24 +3,37 @@ import SEO from "../components/Seo"
 import ProductPreview from "../components/ProductPreview"
 import { Grid } from "../styles/utils"
 
-const product = {
+const FAKE_PRODUCT = {
   title: "cool product",
   image: "",
   description: "this is a product",
-  price: "29.99",
+  variants: [
+    {
+      name: "variant 1",
+      price: "29.99",
+    },
+  ],
+  options: [
+    {
+      name: "option 1",
+      values: ["red", "blue"],
+    },
+  ],
 }
-const products = [product, product, product, product]
+const FAKE_PRODUCTS = [FAKE_PRODUCT, FAKE_PRODUCT, FAKE_PRODUCT, FAKE_PRODUCT]
 
-const StorePage = () => (
-  <>
-    <SEO title="Store" />
-    <h1>Store Page</h1>
-    <Grid cols={[1, 2, 4]}>
-      {products.map(product => (
-        <ProductPreview key={product.title} product={product} />
-      ))}
-    </Grid>
-  </>
-)
+const StorePage = () => {
+  return (
+    <>
+      <SEO title="Store" />
+      <h1>Store Page</h1>
+      <Grid cols={[1, 2, 4]}>
+        {FAKE_PRODUCTS.map(product => (
+          <ProductPreview key={product.title} product={product} />
+        ))}
+      </Grid>
+    </>
+  )
+}
 
 export default StorePage

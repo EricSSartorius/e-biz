@@ -2,13 +2,15 @@ import React, { useContext, useRef } from "react"
 import styled from "styled-components"
 import { Button } from "./Button"
 import { below } from "../styles/breakpoints"
+import { Flex } from "../styles/utils"
 import useClickOutside from "../hooks/useClickOutside"
 
 import LineItem from "./LineItem"
 import ShopifyContext from "../context/ShopifyContext"
 
 const CartWrapper = styled("div")`
-  background: pink;
+  background: var(--black);
+  color: var(--white);
   position: fixed;
   height: 100%;
   overflow-y: scroll;
@@ -17,29 +19,12 @@ const CartWrapper = styled("div")`
   transform: ${({ isCartOpen }: { isCartOpen: boolean }) =>
     isCartOpen ? "translateX(0)" : "translateX(100%)"};
   transition: transform 0.15s ease-in-out;
-  width: 37rem;
+  width: 400px;
   z-index: 1000;
   ${below.xSmall`
     width: 100%;
   `};
 `
-
-// const CartClose = styled('button')`
-//   font-size: 2.2rem;
-//   color: var(--white);
-//   border: none;
-//   background: transparent;
-//   transition: transform 100ms ease;
-//   cursor: pointer;
-// `;
-
-// const CartHeader = styled('header')`
-//   display: flex;
-//   justify-content: space-between;
-//   h4 {
-//     margin: 0;
-//   }
-// `;
 
 type Props = {
   isTaxShowing?: boolean
@@ -91,10 +76,10 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
   return (
     <CartWrapper ref={cartRef} isCartOpen={isCartOpen}>
       <div data-testid="cart">
-        <div>
+        <Flex>
           <h4 data-testid="cart-title">Your Cart</h4>
           <button onClick={() => setIsCartOpen(false)}>×</button>
-        </div>
+        </Flex>
         <div>
           {isCartEmpty && <p data-testid="empty-cart">Your cart is empty.</p>}
           {checkout.lineItems.map(

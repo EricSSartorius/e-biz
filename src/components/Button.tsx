@@ -2,7 +2,6 @@ import styled, { css } from "styled-components"
 
 /* Buttons */
 // size - string - denotes the size of the button. small
-
 const baseButton = css`
   display: inline-block;
   text-align: center;
