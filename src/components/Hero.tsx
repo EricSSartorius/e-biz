@@ -22,10 +22,8 @@ export default Hero
 
 const HeroWrapper = styled(Container)`
   width: 100%;
-  text-align: center;
   background: var(--lightest-grey);
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 500px;
 `
