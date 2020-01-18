@@ -76,7 +76,6 @@ const FooterLayout = styled(Container)`
   color: var(--white);
   a {
     color: var(--white);
-    text-decoration: none;
   }
   .sub-nav {
     display: flex;

@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import BuyButton from "./BuyButton"
-import { Container } from "../styles/utils"
 
 type Option = {
   name: string
@@ -31,9 +30,9 @@ type Props = {
 const ProductPreview = ({ product }: Props) => {
   return (
     <ProductPreviewWrapper>
-      <Link to="/product">
-        <h2>{product.title}</h2>
-      </Link>
+      <h2>
+        <Link to="/product">{product.title}</Link>
+      </h2>
       <BuyButton isQuantityShowing={true} product={product} />
     </ProductPreviewWrapper>
   )
@@ -41,7 +40,8 @@ const ProductPreview = ({ product }: Props) => {
 
 export default ProductPreview
 
-const ProductPreviewWrapper = styled(Container)`
+const ProductPreviewWrapper = styled.div`
+  padding: 0 1rem 1rem;
   border: 1px solid var(--lineColor);
   border-radius: var(--cardRadius);
 `

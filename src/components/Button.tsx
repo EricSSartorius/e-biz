@@ -6,16 +6,16 @@ const baseButton = css`
   display: inline-block;
   text-align: center;
   background: var(--blue-600);
-  color: var(--black);
+  color: var(--white);
   font-weight: bold;
   border-radius: var(--buttonRadius);
   box-shadow: var(--elevation-1);
   font-size: var(--baseFontSize);
   font-family: var(--headingFont);
   padding: 8px 40px;
-  transition: 0.3s ease background, box-shadow, transform;
+  transition: 0.3s ease all;
   &:hover {
-    background: var(--teal-20);
+    background: var(--blue-700);
     box-shadow: var(--elevation-2);
     transform: translate3d(0, -1px, 0);
   }
@@ -32,7 +32,7 @@ export const Button = styled.button`
   & + & {
     margin-left: 20px;
   }
-  ${({ size }) =>
+  ${({ size }: { size?: string }) =>
     size === "small" &&
     css`
       font-size: var(--baseNavSize);

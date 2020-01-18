@@ -39,11 +39,12 @@ export default MainNav
 const Nav = styled.nav`
   ul li {
     display: inline-block;
-    a {
-      text-decoration: none;
-    }
     > *:last-child {
       margin-left: 20px;
+    }
+    a:hover {
+      transition: 0.3s ease color;
+      color: var(--primaryColor);
     }
   }
 `

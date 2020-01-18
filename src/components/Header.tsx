@@ -60,7 +60,6 @@ const InnerHeader = styled.div`
   height: 100%;
   a {
     color: var(--white);
-    text-dec
   }
   .logo {
     margin: 0;
@@ -69,7 +68,6 @@ const InnerHeader = styled.div`
       display: flex;
       align-items: center;
       background: none;
-      text-decoration: none;
       svg {
         margin-right: 10px;
       }

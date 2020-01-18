@@ -52,6 +52,9 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bold;
     margin: var(--margin);
     line-height: 1.15;
+    a {
+      color: var(--primaryColor);
+    }
   }
 
   h1,
@@ -97,6 +100,10 @@ const GlobalStyle = createGlobalStyle`
 
   p.small {
     font-size: var(--smallFontSize);
+  }
+
+  a {
+    text-decoration: none;
   }
 
   button {

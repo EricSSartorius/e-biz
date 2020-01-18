@@ -42,8 +42,5 @@ const SocialUl = styled.ul`
   li {
     display: inline-block;
     margin: 10px;
-    a {
-      text-decoration: none;
-    }
   }
 `
