@@ -9,21 +9,16 @@ type LinkType = {
 
 type Props = {
   links: LinkType[]
-  activeStyle?: object
 }
 
-const MainNav = ({ links, activeStyle = {} }: Props) => {
+const MainNav = ({ links }: Props) => {
   return (
     <Nav>
       <ul>
         {links.map(link => {
           return (
             <li key={link.link}>
-              <Link
-                to={link.link}
-                aria-label={link.title}
-                activeStyle={activeStyle}
-              >
+              <Link to={link.link} aria-label={link.title}>
                 {link.title}
               </Link>
             </li>

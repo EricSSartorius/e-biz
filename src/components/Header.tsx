@@ -28,7 +28,7 @@ const Header = ({ siteTitle }: Props) => (
           <Link to="/">{siteTitle}</Link>
         </h1>
         <div className="nav-wrapper">
-          <Nav links={links} activeStyle={{ color: "var(--primaryColor)" }} />
+          <Nav links={links} />
           <CartIcon />
         </div>
       </InnerHeader>
