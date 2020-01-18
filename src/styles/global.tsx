@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: bold;
-    margin: var(--margin);
+    margin: var(--margins);
     line-height: 1.15;
     a {
       color: var(--primaryColor);

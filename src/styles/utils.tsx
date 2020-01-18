@@ -50,5 +50,5 @@ export const Container = styled.div`
 // A group of buttons, an image, anything
 // 🔒 Not configurable
 export const Items = styled.div`
-  margin: var(--margin);
+  margin: var(--margins);
 `
