@@ -41,7 +41,7 @@ const ProductPreview = ({ product }: Props) => {
 export default ProductPreview
 
 const ProductPreviewWrapper = styled.div`
-  padding: 0 1rem 1rem;
+  padding: 0 1.5rem 1.5rem;
   border: 1px solid var(--lineColor);
   border-radius: var(--cardRadius);
 `

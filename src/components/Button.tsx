@@ -35,7 +35,7 @@ export const Button = styled.button`
   ${({ size }: { size?: string }) =>
     size === "small" &&
     css`
-      font-size: var(--baseNavSize);
+      font-size: var(--baseFontSize);
       padding: 6px 20px;
     `};
 `

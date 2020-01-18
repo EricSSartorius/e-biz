@@ -33,21 +33,20 @@ const vars = css`
     --bgColor: var(--light-grey);
     --lineColor: var(--lightest-grey);
     /* Misc Sizes */
-    --margins: 2.75rem 0 1rem;
-    --padding: 2.75rem;
+    --margins: 6rem 0 3rem;
+    --padding: 6rem;
     --cardRadius: 15px;
     --buttonRadius: 15px;
     /* Font Sizes */
-    --baseFontSize: 1rem;
-    --baseNavSize: 0.64rem;
-    --smallFontSize: 0.8rem;
-    --smallestFontSize: 0.512rem;
-    --heading-one: 1.953rem;
-    --heading-two: 1.563rem;
-    --heading-three: 1.25rem;
-    --heading-four: var(--baseFontSize);
-    --heading-five: var(--smallFontSize);
-    --heading-six: var(--baseNavSize);
+    --baseFontSize: 1.8rem;
+    --smallFontSize: 1.4rem;
+    --largeFontSize: 1.8rem;
+    --heading-one: 6.4rem;
+    --heading-two: 4.8rem;
+    --heading-three: 3.6rem;
+    --heading-four: 2.4rem;
+    --heading-five: 2rem;
+    --heading-six: var(--largeFontSize);
     /* Fonts */
     --bodyFont: "raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",

@@ -42,7 +42,7 @@ export const Grid = styled.div`
 `
 
 export const Container = styled.div`
-  padding: 0 var(--padding) 1.75rem var(--padding);
+  padding: 0 var(--padding) 4.5rem var(--padding);
 `
 
 // ? When To Use

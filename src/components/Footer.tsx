@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-// import Icon from "../components/Icon"
 import Social from "../components/Social"
 import Nav from "../components/Nav"
 import { Container, Flex } from "../styles/utils"
+import { sizes } from "../styles/breakpoints"
 
 type Props = {
   siteTitle: string
@@ -35,7 +35,7 @@ const thisYear = new Date().getFullYear()
 
 const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
   <FooterLayout as="footer">
-    <Flex>
+    <FooterInner>
       <h2 css="margin: 0; font-size: var(--baseFontSize);">
         <Link to="/" aria-label="home page">
           {siteTitle}
@@ -43,19 +43,19 @@ const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
       </h2>
       <div css="text-align: center">
         <Nav links={links} />
-        <p className="small" css="margin-bottom: 0">
+        <p className="small">
           ©{thisYear} {siteTitle}, LLC. All rights reserved.
         </p>
         <ul className="sub-nav">
           <li>
-            <p className="small" css="margin: 0">
+            <p className="small">
               <Link to="/terms" aria-label="terms of use">
                 Terms of Use
               </Link>
             </p>
           </li>
           <li>
-            <p className="small" css="margin: 0">
+            <p className="small">
               <Link to="/privacy-policy" aria-label="privacy policy">
                 Privacy Policy
               </Link>
@@ -66,7 +66,7 @@ const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
       {(facebook || twitter) && (
         <Social facebook={facebook} twitter={twitter} siteTitle={siteTitle} />
       )}
-    </Flex>
+    </FooterInner>
   </FooterLayout>
 )
 
@@ -84,6 +84,11 @@ const FooterLayout = styled(Container)`
       margin: 0 10px;
     }
   }
+`
+
+const FooterInner = styled(Flex)`
+  max-width: ${sizes.xLarge / 16}em;
+  margin: auto;
 `
 
 export default Footer

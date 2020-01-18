@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import React from "react"
 import Nav from "./Nav"
+import Banner from "./Banner"
 import CartIcon from "./CartIcon"
 import { sizes } from "../styles/breakpoints"
 
@@ -23,6 +24,7 @@ const links = [
 const Header = ({ siteTitle }: Props) => (
   <>
     <HeaderWrapper>
+      <Banner />
       <InnerHeader>
         <h1 className="logo">
           <Link to="/">{siteTitle}</Link>
@@ -41,7 +43,7 @@ export default Header
 const HeaderWrapper = styled.header`
   top: 0;
   width: 100%;
-  height: 73px;
+  height: 110px;
   background: var(--grey);
   z-index: var(--headerLevel);
   position: sticky;
@@ -54,10 +56,10 @@ const InnerHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--padding);
-  max-width: ${sizes.xLarge / 18}em;
+  max-width: ${sizes.xLarge / 16}em;
   margin: auto;
   display: flex;
-  height: 100%;
+  height: 70px;
   a {
     color: var(--white);
   }

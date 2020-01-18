@@ -3,43 +3,32 @@ import styled from "styled-components"
 import ShopifyContext from "../context/ShopifyContext"
 import Icon from "./Icon"
 
-const IconWrapper = styled("div")`
-  display: flex;
-  &:hover {
-    cursor: pointer;
-  }
-  margin-left: 1rem;
-`
-
-const IconTag = styled("div")`
+const IconTag = styled.span`
   background: var(--primaryColor);
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  color: var(--white);
+  border-radius: 18px;
+  color: var(--textColor);
   display: inline-block;
-  height: 2.4rem;
-  width: 2.4rem;
-  text-align: center;
-  vertical-align: middle;
-  margin-left: -1.5rem;
-  margin-top: -5px;
-
-  span {
-    font-size: 1.4rem;
-  }
+  height: 1.8rem;
+  width: 1.8rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: -16px;
+  top: -10px;
 `
 
 const CartIcon = () => {
   const { setIsCartOpen, cartQuantity } = useContext(ShopifyContext)
   return (
-    <IconWrapper onClick={() => setIsCartOpen(true)}>
-      <Icon name="cart" color="var(--white)" />
-      {cartQuantity > 0 && (
-        <IconTag>
-          <span>{cartQuantity}</span>
-        </IconTag>
-      )}
-    </IconWrapper>
+    <div css="margin-left: 2rem; display: flex; position: relative">
+      <Icon
+        name="cart"
+        color="var(--white)"
+        onClick={() => setIsCartOpen(true)}
+      />
+      {cartQuantity > 0 && <IconTag>{cartQuantity}</IconTag>}
+    </div>
   )
 }
 

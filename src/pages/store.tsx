@@ -29,7 +29,7 @@ const StorePage = () => {
       <SEO title="Store" />
       <Container>
         <h1>Store Page</h1>
-        <Grid cols={[1, 2, 3]}>
+        <Grid cols={[1, 2, 3, 4]}>
           {FAKE_PRODUCTS.map(product => (
             <ProductPreview key={product.title} product={product} />
           ))}

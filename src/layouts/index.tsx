@@ -10,9 +10,11 @@ import Banner from "../components/Banner"
 import Cart from "../components/Cart"
 import { sizes } from "../styles/breakpoints"
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+type Props = { children: React.ReactNode; location: object }
+
+const Layout = ({ children, location }: Props) => {
   const [discountId, setDiscountId] = useState("")
-  const isBannerShowing = true
+  // const isBannerShowing = !location.pathname.includes("/store")
 
   const checkForDiscount = () => {
     const dId =
@@ -47,7 +49,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <GlobalStyle />
       <ShopifyProvider>
         <Header siteTitle={data.site.siteMetadata.title} />
-        {isBannerShowing && <Banner />}
+        {/* {isBannerShowing && <Banner />} */}
         <Main>{children}</Main>
         <Footer
           siteTitle={data.site.siteMetadata.title}
@@ -63,6 +65,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 export default Layout
 
 const Main = styled.main`
-  max-width: ${sizes.xLarge / 18}em;
+  max-width: ${sizes.xLarge / 16}em;
   margin: auto;
 `

@@ -3,31 +3,19 @@ import vars from "./vars"
 import reset from "./reset"
 
 const GlobalStyle = createGlobalStyle`
-  ${vars}
-  ${reset}
+  ${vars};
+  ${reset};
   
   html {
-    font-size: 18px;
-  }
-
-  :root {
-    --baseNavSize: 1rem;
-  }
-
-
-  @media only screen and (min-width: 1200px) {
-    :root {
-      --baseNavSize: 0.64rem;
-    }
-    html {
-      font-size: 24px;
-    }
+    /* Sets 1 REM to 10px */
+    font-size: 62.5%;
   }
 
   body {
     background-color: var(--bgColor);
     color: var(--textColor);
     font-family: var(--bodyFont);
+    font-size: var(--baseFontSize);
     line-height: 1.5;
   }
 
@@ -51,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     font-weight: 400;
     margin: var(--margins);
-    line-height: 1.15;
+    line-height: 1.2;
     a {
       color: var(--primaryColor);
     }
@@ -94,12 +82,14 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: var(--bodyFont);
-    line-height: 36px;
-    margin: 1rem 0;
-  }
-
-  p.small {
-    font-size: var(--smallFontSize);
+    line-height: 1.45;
+    margin: 1.5rem 0;
+    &.small {
+      font-size: var(--smallFontSize);
+    }
+    &.large {
+      font-size: var(--largeFontSize);
+    }
   }
 
   a {
@@ -111,7 +101,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea, select {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
   }
 
   label, label span {

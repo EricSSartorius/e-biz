@@ -58,7 +58,7 @@ export default Icon
 
 const Svg = styled("svg")`
   fill: ${({ color }: { color: string }) => color};
-  width: 1rem;
-  height: 1rem;
-  min-width: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  min-width: 2.4rem;
 `

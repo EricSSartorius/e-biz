@@ -6,9 +6,9 @@ const Banner = () => {
   return (
     <Link to="/store">
       <BannerWrapper>
-        <h4 css="margin: 0; padding: 1rem; color: var(--white)">
+        <h6 css="margin: 0; padding: 10px; color: var(--white)">
           Sale going on now!
-        </h4>
+        </h6>
       </BannerWrapper>
     </Link>
   )
@@ -21,4 +21,5 @@ const BannerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
 `
