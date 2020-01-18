@@ -2,8 +2,7 @@ import React, { useContext, useRef } from "react"
 import styled from "styled-components"
 import { Button } from "./Button"
 import { below } from "../styles/breakpoints"
-import { Flex } from "../styles/utils"
-import { Container } from "../styles/utils"
+import { Container, Items, Flex } from "../styles/utils"
 import useClickOutside from "../hooks/useClickOutside"
 
 import LineItem from "./LineItem"
@@ -79,15 +78,20 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
       <Container data-testid="cart">
         <Flex>
           <h4 data-testid="cart-title">Your Cart</h4>
-          <button onClick={() => setIsCartOpen(false)}>×</button>
+          <button
+            css="margin: var(--margins)"
+            onClick={() => setIsCartOpen(false)}
+          >
+            ×
+          </button>
         </Flex>
-        <div>
+        <Items>
           {isCartEmpty && <p data-testid="empty-cart">Your cart is empty.</p>}
           {checkout.lineItems.map(
             lineItem =>
               lineItem && <LineItem key={lineItem.id} lineItem={lineItem} />
           )}
-        </div>
+        </Items>
 
         {!isCartEmpty && (
           <footer>

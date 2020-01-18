@@ -43,6 +43,7 @@ const Icon = ({
       onClick={onClick}
       style={style}
       color={color}
+      hasHover={onClick ? true : false}
       viewBox="0 0 1024 1024"
       aria-labelledby={icon.name}
     >
@@ -61,4 +62,9 @@ const Svg = styled("svg")`
   width: 2.4rem;
   height: 2.4rem;
   min-width: 2.4rem;
+  ${({ hasHover }: { hasHover: boolean }) =>
+    hasHover &&
+    `
+      cursor: pointer;
+    `};
 `
