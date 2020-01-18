@@ -12,7 +12,7 @@ const baseButton = css`
   box-shadow: var(--elevation-1);
   font-size: var(--baseFontSize);
   font-family: var(--headingFont);
-  padding: 8px 40px;
+  padding: 1.2rem 2.5rem;
   transition: 0.3s ease all;
   &:hover {
     background: var(--blue-700);
