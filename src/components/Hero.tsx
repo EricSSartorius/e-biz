@@ -27,4 +27,5 @@ const HeroWrapper = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 500px;
 `

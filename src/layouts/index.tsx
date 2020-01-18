@@ -12,7 +12,7 @@ import { sizes } from "../styles/breakpoints"
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [discountId, setDiscountId] = useState("")
-  const isBannerShowing = false
+  const isBannerShowing = true
 
   const checkForDiscount = () => {
     const dId =
