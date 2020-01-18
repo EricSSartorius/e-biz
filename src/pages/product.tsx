@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/Seo"
 import BuyButton from "../components/BuyButton"
+import { Container, Grid } from "../styles/utils"
 
 const FAKE_PRODUCT = {
   title: "cool product",
@@ -22,10 +23,18 @@ const FAKE_PRODUCT = {
 const ProductPage = () => (
   <>
     <SEO title="Product" />
-    <h1>Product Page</h1>
-    <h2>{FAKE_PRODUCT.title}</h2>
-    <p>{FAKE_PRODUCT.description}</p>
-    <BuyButton isQuantityShowing={true} product={FAKE_PRODUCT} />
+    <Container>
+      <Grid cols={[1, 2]}>
+        <div>PRODUCT IMG HERE</div>
+        <div>
+          <h1>{FAKE_PRODUCT.title}</h1>
+          <BuyButton isQuantityShowing={true} product={FAKE_PRODUCT} />
+        </div>
+      </Grid>
+    </Container>
+    <Container>
+      <p>{FAKE_PRODUCT.description}</p>
+    </Container>
   </>
 )
 

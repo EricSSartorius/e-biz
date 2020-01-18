@@ -4,6 +4,7 @@ import styled from "styled-components"
 // import Icon from "../components/Icon"
 import Social from "../components/Social"
 import Nav from "../components/Nav"
+import { Container, Flex } from "../styles/utils"
 
 type Props = {
   siteTitle: string
@@ -33,37 +34,50 @@ const links = [
 const thisYear = new Date().getFullYear()
 
 const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
-  <FooterLayout>
-    <h2>
-      <Link to="/" aria-label="home page">
-        {siteTitle}
-      </Link>
-    </h2>
-    <Nav links={links} />
-    {(facebook || twitter) && (
-      <Social facebook={facebook} twitter={twitter} siteTitle={siteTitle} />
-    )}
-    <p className="small">
-      ©{thisYear} {siteTitle}, LLC. All rights reserved.
-    </p>
-    <ul className="sub-nav">
-      <li>
-        <Link to="/terms" aria-label="terms of use">
-          Terms of Use
+  <FooterLayout as="footer">
+    <Flex>
+      <h2 css="margin: 0">
+        <Link to="/" aria-label="home page">
+          {siteTitle}
         </Link>
-      </li>
-      <li>
-        <Link to="/privacy-policy" aria-label="privacy policy">
-          Privacy Policy
-        </Link>
-      </li>
-    </ul>
+      </h2>
+      <div css="text-align: center">
+        <Nav links={links} />
+        <p className="small" css="margin-bottom: 0">
+          ©{thisYear} {siteTitle}, LLC. All rights reserved.
+        </p>
+        <ul className="sub-nav">
+          <li>
+            <p className="small" css="margin: 0">
+              <Link to="/terms" aria-label="terms of use">
+                Terms of Use
+              </Link>
+            </p>
+          </li>
+          <li>
+            <p className="small" css="margin: 0">
+              <Link to="/privacy-policy" aria-label="privacy policy">
+                Privacy Policy
+              </Link>
+            </p>
+          </li>
+        </ul>
+      </div>
+      {(facebook || twitter) && (
+        <Social facebook={facebook} twitter={twitter} siteTitle={siteTitle} />
+      )}
+    </Flex>
   </FooterLayout>
 )
 
-const FooterLayout = styled.footer`
-  background: var(--light-grey);
-  text-align: center;
+const FooterLayout = styled(Container)`
+  padding-top: var(--padding);
+  background: var(--dark-grey);
+  color: var(--white);
+  a {
+    color: var(--white);
+    text-decoration: none;
+  }
   .sub-nav {
     display: flex;
     justify-content: center;

@@ -1,5 +1,6 @@
 import React from "react"
 // import Image from "../components/Image"
+import { Container } from "../styles/utils"
 import SEO from "../components/Seo"
 import Hero from "../components/Hero"
 
@@ -7,7 +8,7 @@ const IndexPage = () => (
   <>
     <SEO title="Home" />
     <Hero />
-    <div>
+    <Container>
       <h1>Home Page</h1>
       {/* <Image /> */}
       <p>
@@ -31,7 +32,7 @@ const IndexPage = () => (
         lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer
         quam nunc, consequat
       </p>
-    </div>
+    </Container>
   </>
 )
 

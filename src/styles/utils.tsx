@@ -41,10 +41,14 @@ export const Grid = styled.div`
   }}}
 `
 
+export const Container = styled.div`
+  padding: 0 var(--padding) 1.75rem var(--padding);
+`
+
 // ? When To Use
 // Anytime you need the standard margin around something.
 // A group of buttons, an image, anything
 // 🔒 Not configurable
 export const Items = styled.div`
-  margin: 2.75rem 0 1rem;
+  margin: var(--margin);
 `

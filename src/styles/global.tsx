@@ -89,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--heading-six);
   }
 
-  p {
+  p, label {
     font-family: var(--bodyFont);
     line-height: 36px;
     margin: 1rem 0;
@@ -103,8 +103,13 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  input, textarea {
+  input, textarea, select {
     width: 100%;
+    margin: 1rem 0;
+  }
+
+  label {
+    display: block;
   }
 `
 

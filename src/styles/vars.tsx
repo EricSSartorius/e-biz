@@ -58,6 +58,8 @@ const vars = css`
 
     /* Margin */
     --margin: 2.75rem 0 1rem;
+    /* Container Padding */
+    --padding: 2.75rem;
   }
 `
 

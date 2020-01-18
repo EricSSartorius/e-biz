@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-// import addDays from 'date-fns/add_days';
 import Cookies from "js-cookie"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
@@ -11,20 +10,9 @@ import Banner from "../components/Banner"
 import Cart from "../components/Cart"
 import { sizes } from "../styles/breakpoints"
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const [discountId, setDiscountId] = useState("")
-
-  // const getGaCookie = () => {
-  //   // Gets GA UTM Cookie
-  //   if (
-  //     location &&
-  //     location.search &&
-  //     location.search.includes('utm_source=')
-  //   ) {
-  //     const tomorrow = addDays(new Date(), 1).toGMTString();
-  //     document.cookie = `gtmcook=${location.search};expires=${tomorrow};`;
-  //   }
-  // };
+  const isBannerShowing = false
 
   const checkForDiscount = () => {
     const dId =
@@ -39,7 +27,6 @@ const Layout = ({ children }) => {
   }
 
   useEffect(() => {
-    // getGaCookie();
     checkForDiscount()
   }, [])
 
@@ -56,18 +43,20 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ShopifyProvider>
+    <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Banner />
-      <Main>{children}</Main>
-      <Footer
-        siteTitle={data.site.siteMetadata.title}
-        facebook={data.site.siteMetadata.facebook}
-        twitter={data.site.siteMetadata.twitter}
-      />
-      <Cart discountId={discountId} />
-    </ShopifyProvider>
+      <ShopifyProvider>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        {isBannerShowing && <Banner />}
+        <Main>{children}</Main>
+        <Footer
+          siteTitle={data.site.siteMetadata.title}
+          facebook={data.site.siteMetadata.facebook}
+          twitter={data.site.siteMetadata.twitter}
+        />
+        <Cart discountId={discountId} />
+      </ShopifyProvider>
+    </>
   )
 }
 

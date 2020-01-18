@@ -11,20 +11,12 @@ type Props = {
 
 const links = [
   {
-    link: "/",
-    title: "Home",
-  },
-  {
     link: "/store",
     title: "Store",
   },
   {
     link: "/about",
     title: "About",
-  },
-  {
-    link: "/contact",
-    title: "Contact",
   },
 ]
 
@@ -36,7 +28,7 @@ const Header = ({ siteTitle }: Props) => (
           <Link to="/">{siteTitle}</Link>
         </h1>
         <div className="nav-wrapper">
-          <Nav links={links} />
+          <Nav links={links} activeStyle={{ color: "var(--primaryColor)" }} />
           <CartIcon />
         </div>
       </InnerHeader>
@@ -50,7 +42,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   width: 100%;
   height: 73px;
-  background: var(--light-grey);
+  background: var(--grey);
   z-index: var(--headerLevel);
   position: sticky;
 `
@@ -61,18 +53,23 @@ const InnerHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   align-items: center;
+  padding: 0 var(--padding);
   max-width: ${sizes.xLarge / 18}em;
   margin: auto;
   display: flex;
   height: 100%;
+  a {
+    color: var(--white);
+    text-dec
+  }
   .logo {
     margin: 0;
     flex-shrink: 1;
     a {
-      color: white;
       display: flex;
       align-items: center;
       background: none;
+      text-decoration: none;
       svg {
         margin-right: 10px;
       }

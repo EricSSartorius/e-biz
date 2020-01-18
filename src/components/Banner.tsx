@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { sizes } from "../styles/breakpoints"
+// import { sizes } from "../styles/breakpoints"
+import { Container } from "../styles/utils"
 
 const Banner = () => {
   return (
@@ -12,7 +13,7 @@ const Banner = () => {
 
 export default Banner
 
-const BannerWrapper = styled.div`
+const BannerWrapper = styled(Container)`
   background: var(--black);
   color: var(--white);
   display: flex;

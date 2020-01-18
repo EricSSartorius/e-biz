@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Button } from "./Button"
 import { below } from "../styles/breakpoints"
 import { Flex } from "../styles/utils"
+import { Container } from "../styles/utils"
 import useClickOutside from "../hooks/useClickOutside"
 
 import LineItem from "./LineItem"
@@ -75,7 +76,7 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
 
   return (
     <CartWrapper ref={cartRef} isCartOpen={isCartOpen}>
-      <div data-testid="cart">
+      <Container data-testid="cart">
         <Flex>
           <h4 data-testid="cart-title">Your Cart</h4>
           <button onClick={() => setIsCartOpen(false)}>×</button>
@@ -109,7 +110,7 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
             </p>
           </footer>
         )}
-      </div>
+      </Container>
     </CartWrapper>
   )
 }

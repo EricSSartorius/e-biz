@@ -2,18 +2,28 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-type Props = {
-  links: []
+type LinkType = {
+  link: string
+  title: string
 }
 
-const MainNav = ({ links }) => {
+type Props = {
+  links: LinkType[]
+  activeStyle?: object
+}
+
+const MainNav = ({ links, activeStyle = {} }: Props) => {
   return (
     <Nav>
       <ul>
         {links.map(link => {
           return (
             <li key={link.link}>
-              <Link to={link.link} aria-label={link.title}>
+              <Link
+                to={link.link}
+                aria-label={link.title}
+                activeStyle={activeStyle}
+              >
                 {link.title}
               </Link>
             </li>
@@ -29,6 +39,11 @@ export default MainNav
 const Nav = styled.nav`
   ul li {
     display: inline-block;
-    margin-left: 10px;
+    a {
+      text-decoration: none;
+    }
+    > *:last-child {
+      margin-left: 20px;
+    }
   }
 `
