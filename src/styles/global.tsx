@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-weight: bold;
+    font-weight: 400;
     margin: var(--margins);
     line-height: 1.15;
     a {
@@ -92,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--heading-six);
   }
 
-  p, label {
+  p {
     font-family: var(--bodyFont);
     line-height: 36px;
     margin: 1rem 0;
@@ -111,11 +111,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea, select {
-    width: 100%;
     margin: 1rem 0;
   }
 
-  label {
+  label, label span {
     display: block;
   }
 `

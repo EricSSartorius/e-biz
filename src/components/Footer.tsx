@@ -36,7 +36,7 @@ const thisYear = new Date().getFullYear()
 const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
   <FooterLayout as="footer">
     <Flex>
-      <h2 css="margin: 0">
+      <h2 css="margin: 0; font-size: var(--baseFontSize);">
         <Link to="/" aria-label="home page">
           {siteTitle}
         </Link>

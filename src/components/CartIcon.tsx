@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-// import Icon from "./Icon"
 import ShopifyContext from "../context/ShopifyContext"
+import Icon from "./Icon"
 
 const IconWrapper = styled("div")`
   display: flex;
@@ -12,7 +12,7 @@ const IconWrapper = styled("div")`
 `
 
 const IconTag = styled("div")`
-  background: var(--blue);
+  background: var(--primaryColor);
   border: 2px solid var(--white);
   border-radius: 50%;
   color: var(--white);
@@ -33,7 +33,7 @@ const CartIcon = () => {
   const { setIsCartOpen, cartQuantity } = useContext(ShopifyContext)
   return (
     <IconWrapper onClick={() => setIsCartOpen(true)}>
-      <p>CART</p>
+      <Icon name="cart" color="var(--white)" />
       {cartQuantity > 0 && (
         <IconTag>
           <span>{cartQuantity}</span>

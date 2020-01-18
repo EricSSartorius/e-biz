@@ -62,6 +62,7 @@ const InnerHeader = styled.div`
     color: var(--white);
   }
   .logo {
+    font-size: var(--baseFontSize);
     margin: 0;
     flex-shrink: 1;
     a {

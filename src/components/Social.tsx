@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Icon from "./Icon"
 
 type Props = {
   siteTitle: string
@@ -16,8 +17,7 @@ const Social = ({ siteTitle, facebook = "", twitter = "" }: Props) => {
             href={`https://www.facebook.com/${facebook}`}
             aria-label={`link to ${siteTitle} facebook account`}
           >
-            {/* <Icon name="facebook" /> */}
-            FB
+            <Icon name="facebook" color="var(--white)" />
           </a>
         </li>
       )}
@@ -27,8 +27,7 @@ const Social = ({ siteTitle, facebook = "", twitter = "" }: Props) => {
             href={`https://twitter.com/${twitter}`}
             aria-label={`link to ${siteTitle} twitter account`}
           >
-            {/* <Icon name="twitter" /> */}
-            TWTR
+            <Icon name="twitter" color="var(--white)" />
           </a>
         </li>
       )}

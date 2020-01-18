@@ -42,17 +42,19 @@ const vars = css`
     --baseNavSize: 0.64rem;
     --smallFontSize: 0.8rem;
     --smallestFontSize: 0.512rem;
-    --heading-1: 1.953rem;
-    --heading-2: 1.563rem;
-    --heading-3: 1.25rem;
-    --heading-4: var(--baseFontSize);
-    --heading-5: var(--smallFontSize);
-    --heading-6: var(--baseNavSize);
+    --heading-one: 1.953rem;
+    --heading-two: 1.563rem;
+    --heading-three: 1.25rem;
+    --heading-four: var(--baseFontSize);
+    --heading-five: var(--smallFontSize);
+    --heading-six: var(--baseNavSize);
     /* Fonts */
-    --bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    --bodyFont: "raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif;
-    --headingFont: var(--bodyFont);
+    --headingFont: "source sans pro", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
   }
 `
 
