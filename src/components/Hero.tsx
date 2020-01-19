@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <div>
-        <h1>HOME HERO</h1>
+        <h1>Hero</h1>
         <p>Sale and product Info/image will go here to catch attention</p>
         <Button as={Link} to="/store">
           Shop

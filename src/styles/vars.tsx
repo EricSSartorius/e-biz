@@ -35,7 +35,7 @@ const vars = css`
     /* Misc Sizes */
     --margins: 6rem 0 3rem;
     --padding: 6rem;
-    --cardRadius: 5rem;
+    --cardRadius: 1.5rem;
     --buttonRadius: 5rem;
     /* Font Sizes */
     --baseFontSize: 1.8rem;

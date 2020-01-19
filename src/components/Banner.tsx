@@ -2,13 +2,19 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const Banner = () => {
+type Props = {
+  message?: string
+  link?: string
+}
+
+const Banner = ({
+  message = "Take a look at our great products!",
+  link = "/store",
+}: Props) => {
   return (
-    <Link to="/store">
+    <Link to={link}>
       <BannerWrapper>
-        <h6 css="margin: 0; padding: 10px; color: var(--white)">
-          Sale going on now!
-        </h6>
+        <h6 css="margin: 0; padding: 10px; color: var(--white)">{message}</h6>
       </BannerWrapper>
     </Link>
   )

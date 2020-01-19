@@ -54,3 +54,8 @@ export const Items = styled.div`
 export const Container = styled.div`
   padding: 0 var(--padding) 4.5rem var(--padding);
 `
+
+export const Card = styled(Container)`
+  background: var(--white);
+  border-radius: var(--cardRadius);
+`
