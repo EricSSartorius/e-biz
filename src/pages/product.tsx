@@ -16,6 +16,8 @@ const FAKE_PRODUCT = {
     {
       name: "variant 1",
       price: "29.99",
+      sku: "123",
+      shopifyId: "123",
     },
   ],
   options: [
@@ -25,6 +27,7 @@ const FAKE_PRODUCT = {
     },
   ],
 }
+
 const ProductPage = () => (
   <>
     <SEO title="Product" />

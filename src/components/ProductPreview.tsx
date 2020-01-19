@@ -19,7 +19,6 @@ type Product = {
   title: string
   image: string
   description: string
-  price: string
   options: Option[]
   variants: Variant[]
 }
