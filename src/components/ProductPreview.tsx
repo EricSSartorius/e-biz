@@ -30,10 +30,11 @@ type Props = {
 const ProductPreview = ({ product }: Props) => {
   return (
     <ProductPreviewWrapper>
-      <h2>
-        <Link to="/product">{product.title}</Link>
-      </h2>
-      <BuyButton isQuantityShowing={true} product={product} />
+      <Link to="/product">
+        <div>PRODUCT IMAGE HERE</div>
+        <h2 css="color: var(--primaryColor)">{product.title}</h2>
+      </Link>
+      <BuyButton product={product} />
     </ProductPreviewWrapper>
   )
 }

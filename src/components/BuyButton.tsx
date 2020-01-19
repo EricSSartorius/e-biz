@@ -20,17 +20,21 @@ type Product = {
   title: string
   image: string
   description: string
-  price: string
   options: Option[]
   variants: Variant[]
 }
 
 type Props = {
   isQuantityShowing?: boolean
+  isVariantsShowing?: boolean
   product: Product
 }
 
-const BuyButton = ({ isQuantityShowing = false, product }: Props) => {
+const BuyButton = ({
+  isQuantityShowing = false,
+  isVariantsShowing = false,
+  product,
+}: Props) => {
   const { client, addVariantToCart } = useContext(ShopifyContext)
 
   const [selectedOptions, setSelectedOptions] = useState({})
@@ -69,16 +73,17 @@ const BuyButton = ({ isQuantityShowing = false, product }: Props) => {
         <meta itemProp="priceCurrency" content="USD" />${variant.price}
       </p>
       <p>{variant.sku}</p>
-      {product.options
-        .filter(option => option.values.length > 1)
-        .map(option => (
-          <VariantSelector
-            handleOptionChange={e => handleOptionChange(e)}
-            key={option.name}
-            option={option}
-            value={selectedVariant}
-          />
-        ))}
+      {isVariantsShowing &&
+        product.options
+          .filter(option => option.values.length > 1)
+          .map(option => (
+            <VariantSelector
+              handleOptionChange={e => handleOptionChange(e)}
+              key={option.name}
+              option={option}
+              value={selectedVariant}
+            />
+          ))}
       {isQuantityShowing && (
         <label htmlFor="quantity">
           <span>Quantity</span>

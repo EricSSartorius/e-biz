@@ -7,7 +7,12 @@ import { Container } from "../styles/utils"
 const FAKE_PRODUCT = {
   title: "cool product",
   image: "",
-  description: "this is a product",
+  description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  aliquip ex ea commodo consequat. Duis aute irure dolor in
+  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+  pariatur. Excepteur sint occaecat cupidatat non proident`,
   variants: [
     {
       name: "variant 1",
@@ -16,7 +21,7 @@ const FAKE_PRODUCT = {
   ],
   options: [
     {
-      name: "option 1",
+      name: "color",
       values: ["red", "blue"],
     },
   ],
