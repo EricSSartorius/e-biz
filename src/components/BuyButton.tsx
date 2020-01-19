@@ -72,7 +72,7 @@ const BuyButton = ({
       <p>
         <meta itemProp="priceCurrency" content="USD" />${variant.price}
       </p>
-      <p>{variant.sku}</p>
+      {/* <p>{variant.sku}</p> */}
       {isVariantsShowing &&
         product.options
           .filter(option => option.values.length > 1)
