@@ -4,6 +4,7 @@ import Portal from "./Portal"
 import useScrollFreeze from "../hooks/useScrollFreeze"
 import styled from "styled-components"
 import { Card } from "../styles/utils"
+import Icon from "./Icon"
 
 interface ModalAnimationProps {
   isActive: boolean
@@ -73,12 +74,12 @@ const Modal = ({
                 style={{
                   position: "absolute",
                   right: "5px",
-                  top: "5px",
+                  top: "8px",
                   pointerEvents: "all",
                   zIndex: "1",
                 }}
               >
-                X
+                <Icon name="close" />
               </button>
             )}
             {children}

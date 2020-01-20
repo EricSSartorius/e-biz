@@ -1,12 +1,62 @@
 import React from "react"
 import styled from "styled-components"
 
+type Icon = {
+  name: string
+  paths: string[]
+  viewBox?: string
+}
+
 type Props = {
   name: string
   style?: object
   color?: string
   onClick?: () => void
 }
+
+const Icon = ({
+  name,
+  color = "var(--textColor)",
+  style = {},
+  onClick,
+}: Props) => {
+  let icon: Icon = close
+  if (name === "facebook") icon = facebook
+  if (name === "twitter") icon = twitter
+  if (name === "cart") icon = cart
+  if (name === "close") icon = close
+
+  return (
+    <Svg
+      onClick={onClick}
+      style={style}
+      color={color}
+      hasHover={onClick ? true : false}
+      viewBox={icon.viewBox || "0 0 1024 1024"}
+      aria-labelledby={icon.name}
+    >
+      <title id={`icon-${icon.name}`}>{icon.name}</title>
+      {icon.paths.map((path, i) => (
+        <path d={path} key={`path-${i}`} />
+      ))}
+    </Svg>
+  )
+}
+
+export default Icon
+
+const Svg = styled("svg")`
+  width: 2.4rem;
+  height: 2.4rem;
+  min-width: 2.4rem;
+  ${({ hasHover, color }: { hasHover: boolean; color: string }) =>
+    `
+    fill: ${color};
+    ${hasHover && `cursor: pointer`};
+  `};
+`
+
+/* Icons */
 
 const facebook = {
   paths: [
@@ -29,42 +79,10 @@ const cart = {
   name: "cart",
 }
 
-const Icon = ({
-  name,
-  color = "var(--textColor)",
-  style = {},
-  onClick,
-}: Props) => {
-  // TODO Clean up
-  const icon =
-    name === "facebook" ? facebook : name === "twitter" ? twitter : cart
-  return (
-    <Svg
-      onClick={onClick}
-      style={style}
-      color={color}
-      hasHover={onClick ? true : false}
-      viewBox="0 0 1024 1024"
-      aria-labelledby={icon.name}
-    >
-      <title id={`icon-${icon.name}`}>{icon.name}</title>
-      {icon.paths.map((path, i) => (
-        <path d={path} key={`path-${i}`} />
-      ))}
-    </Svg>
-  )
+const close = {
+  paths: [
+    "M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z",
+  ],
+  name: "close",
+  viewBox: "0 0 20 20",
 }
-
-export default Icon
-
-const Svg = styled("svg")`
-  fill: ${({ color }: { color: string }) => color};
-  width: 2.4rem;
-  height: 2.4rem;
-  min-width: 2.4rem;
-  ${({ hasHover }: { hasHover: boolean }) =>
-    hasHover &&
-    `
-      cursor: pointer;
-    `};
-`

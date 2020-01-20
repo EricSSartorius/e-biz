@@ -7,6 +7,7 @@ import useClickOutside from "../hooks/useClickOutside"
 
 import LineItem from "./LineItem"
 import ShopifyContext from "../context/ShopifyContext"
+import Icon from "./Icon"
 
 const CartWrapper = styled("div")`
   background: var(--black);
@@ -82,7 +83,7 @@ const Cart = ({ isTaxShowing = false, discountId = "" }: Props) => {
             css="margin: var(--margins)"
             onClick={() => setIsCartOpen(false)}
           >
-            ×
+            <Icon name="close" color="var(--white)" />
           </button>
         </Flex>
         <Items>
