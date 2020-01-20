@@ -25,6 +25,7 @@ const CartIcon = () => {
       <Icon
         name="cart"
         color="var(--white)"
+        style={{ width: "3.5rem", height: "3.5rem", maxWidth: "3.5rem" }}
         onClick={() => setIsCartOpen(true)}
       />
       {cartQuantity > 0 && <IconTag>{cartQuantity}</IconTag>}
