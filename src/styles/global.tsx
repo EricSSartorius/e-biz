@@ -1,10 +1,33 @@
 import { createGlobalStyle } from "styled-components"
 import vars from "./vars"
 import reset from "./reset"
+import { above } from "../styles/breakpoints"
 
 const GlobalStyle = createGlobalStyle`
   ${vars};
   ${reset};
+
+  ${above.large`
+    :root {
+      --baseFontSize: 1.8rem;
+      --heading-one: 6.4rem;
+      --heading-two: 4.8rem;
+      --heading-three: 3.6rem;
+      --margins: 6rem 0 3rem;
+      --containerPadding: 0 6rem 3rem;
+      --basePadding: 6rem;
+    }
+  `}
+  ${above.medium`
+    :root {
+      --heading-one: 4.4rem;
+      --heading-two: 3.1rem;
+      --heading-three: 2.6rem;
+      --margins: 4.5rem 0 2.5rem;
+      --containerPadding: 0 4.5rem 2.5rem;
+      --basePadding: 4.5rem;
+    }
+  `}
   
   html {
     /* Sets 1 REM to 10px */

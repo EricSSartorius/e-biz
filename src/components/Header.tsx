@@ -55,7 +55,7 @@ const InnerHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--padding);
+  padding: 0 var(--basePadding);
   max-width: ${sizes.xLarge / 16}em;
   margin: auto;
   display: flex;

@@ -52,7 +52,7 @@ export const Items = styled.div`
 // ? When To Use
 // Anytime you need the standard padding around something.
 export const Container = styled.div`
-  padding: 0 var(--padding) 4.5rem var(--padding);
+  padding: var(--containerPadding);
 `
 
 export const Card = styled(Container)`

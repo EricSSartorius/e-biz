@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Social from "../components/Social"
 import Nav from "../components/Nav"
-import { Container, Flex } from "../styles/utils"
-import { sizes } from "../styles/breakpoints"
+import { Container, Flex, Items } from "../styles/utils"
+import { sizes, above } from "../styles/breakpoints"
 
 type Props = {
   siteTitle: string
@@ -36,7 +36,7 @@ const thisYear = new Date().getFullYear()
 const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
   <FooterLayout as="footer">
     <FooterInner>
-      <h2 css="margin: 0; font-size: var(--baseFontSize);">
+      <h2 css="font-size: var(--baseFontSize);">
         <Link to="/" aria-label="home page">
           {siteTitle}
         </Link>
@@ -64,14 +64,16 @@ const Footer = ({ siteTitle, facebook = "", twitter = "" }: Props) => (
         </ul>
       </div>
       {(facebook || twitter) && (
-        <Social facebook={facebook} twitter={twitter} siteTitle={siteTitle} />
+        <Items>
+          <Social facebook={facebook} twitter={twitter} siteTitle={siteTitle} />
+        </Items>
       )}
     </FooterInner>
   </FooterLayout>
 )
 
 const FooterLayout = styled(Container)`
-  padding-top: var(--padding);
+  padding-top: var(--basePadding);
   background: var(--dark-grey);
   color: var(--white);
   a {
@@ -89,6 +91,12 @@ const FooterLayout = styled(Container)`
 const FooterInner = styled(Flex)`
   max-width: ${sizes.xLarge / 16}em;
   margin: auto;
+  flex-direction: column;
+  align-items: center;
+  ${above.medium`
+    flex-direction: row;
+    align-items: flex-start;
+  `}
 `
 
 export default Footer
